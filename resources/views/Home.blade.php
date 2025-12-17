@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/png">
 
     <style>
         @font-face {
@@ -449,7 +450,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <a href="https://wa.me/6285856833187?text=Halo%20Tomboan,%20saya%20ingin%20reservasi." target="_blank" class="flex items-center justify-center w-full border-2 border-green-600 text-green-700 bg-white font-bold py-2 px-4 rounded-lg hover:bg-green-50 transition duration-300">
+                        <a href="https://wa.me/6285755435878?text=Halo%20Tomboan,%20saya%20ingin%20reservasi." target="_blank" class="flex items-center justify-center w-full border-2 border-green-600 text-green-700 bg-white font-bold py-2 px-4 rounded-lg hover:bg-green-50 transition duration-300">
                             <i class="fab fa-whatsapp text-xl mr-2"></i> Chat WhatsApp
                         </a>
                     </div>

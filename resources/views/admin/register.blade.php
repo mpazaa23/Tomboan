@@ -36,6 +36,11 @@
                 <label class="block text-xs font-bold text-[#485741] uppercase mb-1 ml-1">Email Address</label>
                 <input type="email" name="email" required placeholder="email@contoh.com"
                     class="w-full bg-[#EBEED9] border-none rounded-xl px-4 py-3 text-gray-700 focus:ring-2 focus:ring-[#65745A] outline-none transition placeholder-gray-400">
+                    @error('email')
+                    <p class="text-red-500 text-xs mt-1 italic font-bold">
+                        <i class="fas fa-exclamation-circle"></i> {{ $message }}
+                    </p>
+                @enderror
             </div>
 
             <div>

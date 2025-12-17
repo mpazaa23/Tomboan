@@ -36,11 +36,16 @@ class AdminController extends Controller
 
      public function processRegister(Request $request)
     {
-        // Validasi input
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed', n
+            'password' => 'required|string|min:6|confirmed', 
+        ],
+            [
+            'email.unique' => 'Yahh,Email ini sudah terdaftar sebagai Admin lain.',
+            'password.confirmed' => 'Password dan Konfirmasi tidak cocok.',
+            'password.min' => 'Password kependekan, minimal 6 karakter ya.',
         ]);
 
         
@@ -111,9 +116,9 @@ class AdminController extends Controller
         'email' => 'required|email',
         'address' => 'required',
         'opening_hours' => 'required',
-        'user_id' => auth()->id(),
     ]);
 
+    $validated['user_id'] = auth()->id();
     $setting->update($validated);
 
     return back()->with('success', 'Informasi Kontak berhasil diperbarui!');

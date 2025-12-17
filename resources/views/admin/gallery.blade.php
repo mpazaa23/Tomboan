@@ -26,6 +26,11 @@
             <a href="#" class="flex items-center px-4 py-3 bg-[#65745A] rounded-lg transition">
                 <i class="fas fa-images w-6"></i> Kelola Gallery
             </a>
+             <a href="https://docs.google.com/forms/d/1mhE7IUjqJcWeX1XZAMTKBcwce3HRLEKXLKTg__DByPA/edit" 
+               target="_blank" 
+               class="flex items-center px-4 py-3 hover:bg-[#65745A] rounded-lg transition opacity-70 hover:opacity-100">
+                <i class="fas fa-clipboard-list w-6"></i> Kritik & Saran Pengunjung
+            </a>
         </nav>
     </aside>
 

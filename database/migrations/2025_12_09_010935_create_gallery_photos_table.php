@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('image_path'); 
             $table->string('caption')->nullable();
-            $table->string('orientation')->default('square'); // square, landscape, portrait
+            $table->string('orientation')->default('square'); 
             $table->timestamps();
         });
     }

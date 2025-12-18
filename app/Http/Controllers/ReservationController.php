@@ -27,10 +27,8 @@ class ReservationController extends Controller
 
     public function update(Request $request, $id)
     {
-        // 1. Cari data berdasarkan ID
         $reservation = Reservation::findOrFail($id);
 
-        // 2. Validasi input (Sesuai nama kolom di database Bahasa Indonesia)
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'tanggal_reservasi' => 'required|date',

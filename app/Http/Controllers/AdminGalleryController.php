@@ -14,20 +14,17 @@ class AdminGalleryController extends Controller
         return view('admin.gallery', compact('photos'));
     }
 
-    // 2. Proses Upload Foto Baru
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Max 2MB
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', 
             'caption' => 'nullable|string|max:100',
             'orientation' => 'required|in:square,landscape,portrait',
         ]);
 
-        // Simpan file ke folder public/images/uploads
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images/uploads'), $imageName);
 
-        // Simpan info ke database
         GalleryPhoto::create([
             'image_path' => 'images/uploads/' . $imageName,
             'caption' => $request->caption,
@@ -37,12 +34,11 @@ class AdminGalleryController extends Controller
         return back()->with('success', 'Foto berhasil ditambahkan!');
     }
 
-    // 3. Hapus Foto
     public function destroy($id)
     {
         $photo = GalleryPhoto::findOrFail($id);
 
-        // Hapus file fisik dari folder (jika ada)
+        
         if(file_exists(public_path($photo->image_path))){
             unlink(public_path($photo->image_path));
         }

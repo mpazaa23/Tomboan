@@ -378,46 +378,37 @@
 
 <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 1. Ambil elemen notifikasi berdasarkan ID
             const alertBox = document.getElementById('success-alert');
 
-            // 2. Jika notifikasi muncul
+            
             if (alertBox) {
-                // 3. Tunggu 4 detik (4000ms)
                 setTimeout(function() {
                     
-                    // A. Buat transparan perlahan (Fade Out)
                     alertBox.style.opacity = '0';
 
-                    // B. Setelah transisi selesai (700ms sesuai class duration-700), hilangkan dari layar
                     setTimeout(function() {
                         alertBox.style.display = 'none';
                     }, 700);
 
-                }, 6000); // Ubah 4000 jadi 3000 jika ingin 3 detik
+                }, 6000); 
             }
         });
 
         function openEditModal(button) {
-        // 1. Ambil data dari tombol yang diklik (atribut data-...)
         const id = button.getAttribute('data-id');
         const nama = button.getAttribute('data-nama');
         const asal = button.getAttribute('data-asal');
         const tanggal = button.getAttribute('data-tanggal');
         const cerita = button.getAttribute('data-cerita');
 
-        // 2. Isi form di dalam modal dengan data tersebut
         document.getElementById('edit_nama').value = nama;
         document.getElementById('edit_asal').value = asal;
         document.getElementById('edit_tanggal').value = tanggal;
         document.getElementById('edit_cerita').value = cerita;
 
-        // 3. Ubah URL Action pada form agar mengarah ke ID yang benar
-        // Hasilnya jadi: /experience/5 (misalnya)
         const form = document.getElementById('formEdit');
         form.action = "{{ url('/experience') }}/" + id;
 
-        // 4. Tampilkan Modal
         document.getElementById('editModal').classList.remove('hidden');
     }
 

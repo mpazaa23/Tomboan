@@ -30,8 +30,8 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-green': '#65745A',   /* Warna hijau background utama */
-                        'dark-green': '#485741',      /* Warna footer */
+                        'primary-green': '#65745A',   
+                        'dark-green': '#485741',   
                         'accent-cream': '#F3F6E8',
                     },
                     fontFamily: {
@@ -258,7 +258,5 @@
             </div>
         </div>
     </footer>
-
-
 </body>
 </html>
